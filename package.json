@@ -1,0 +1,51 @@
+{
+	"name": "nsui",
+	"version": "0.1.0",
+	"description": "No Style UI non styled components library",
+	"repository": "https://github.com/bu3alwa/nsui",
+	"license": "MIT",
+	"private": true,
+	"packageManager": "pnpm@7.19.0",
+	"scripts": {
+		"dev": "turbo --filter=\"@nsui/react\" dev",
+		"dev:next": "turbo --filter=\"playground-next\" dev",
+		"build": "turbo --filter=\"@nsui/*\" --filter=\"!playground*\" build",
+		"build:www": "turbo --filter www build",
+		"build:next": "turbo --filter=\"playground-next\" build",
+		"start:www": "turbo --filter www start",
+		"start:next": "turbo --filter=\"playground-next\" start",
+		"codegen": "run-p --filter=\"@nsui/*\" --filter=\"!playground*\" codegen:*",
+		"lint": "eslint --ext \".js,.ts,.tsx\" --ignore-path .gitignore . --report-unused-disable-directives",
+		"lint-fix": "pnpm lint --fix && manypkg fix"
+	},
+	"devDependencies": {
+		"turbo": "^1.6.3",
+		"typescript": "^4.9.4"
+	},
+	"dependencies": {
+		"@rollup/plugin-node-resolve": "^15.0.1",
+		"@swc/core": "^1.3.24",
+		"@types/node": "^18.0.0",
+		"@types/prettier": "^2.7.2",
+		"@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-turbo": "^0.0.7",
+    "eslint-plugin-unicorn": "45.0.2",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.7.1",
+		"rollup": "^2.79.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-multi-input": "^1.3.1",
+    "rollup-plugin-node-externals": "^5.0.0",
+    "rollup-plugin-swc3": "^0.8.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+		"tsx": "^3.12.1"
+	}
+}

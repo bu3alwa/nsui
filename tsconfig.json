@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.build.json",
+  "include": ["packages", "rollup.config.ts", "scripts"],
+  "compilerOptions": {
+    "allowJs": false,
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "paths": {
+      "@nsui/react": ["packages/react/src"],
+    }
+  },
+}

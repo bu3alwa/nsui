@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

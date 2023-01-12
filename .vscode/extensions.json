@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bungcip.better-toml",
+    "Orta.vscode-twoslash-queries"
+  ]
+}
