@@ -17,4 +17,4 @@ const Menu = React.forwardRef<HTMLInputElement, MenuProps>((props, ref) => {
 });
 
 Menu.displayName = 'Menu';
-export default Menu;
+module.exports = Menu;

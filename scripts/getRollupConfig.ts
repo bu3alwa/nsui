@@ -1,4 +1,5 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import path from 'path';
 import { RollupOptions } from 'rollup';
 import del from 'rollup-plugin-delete';
@@ -38,7 +39,7 @@ function types({ input, packageDir }: Options): RollupOptions {
         del({
           targets: `${packageDir}/dist`,
         }),
-      multiInput.default({ relative: path.resolve(packageDir, 'src/') }),
+      multiInput({ relative: path.resolve(packageDir, 'src/') }),
       externals({
         packagePath: path.resolve(packageDir, 'package.json'),
         deps: true,
@@ -72,7 +73,7 @@ function lib({ input, packageDir }: Options): RollupOptions {
       },
     ],
     plugins: [
-      multiInput.default({ relative: path.resolve(packageDir, 'src/') }),
+      multiInput({ relative: path.resolve(packageDir, 'src/') }),
       externals({
         packagePath: path.resolve(packageDir, 'package.json'),
       }),
@@ -91,6 +92,7 @@ function lib({ input, packageDir }: Options): RollupOptions {
           externalHelpers: true,
         },
       }),
+      terser(),
     ],
   };
 }
