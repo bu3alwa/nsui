@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import React from "react";
-import Menu from "@nsui/react/menu/Menu";
+import { Menu } from "@nsui/react";
 
 const index: NextPage = () => {
   return (

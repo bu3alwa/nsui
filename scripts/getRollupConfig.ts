@@ -48,7 +48,7 @@ function types({ input, packageDir }: Options): RollupOptions {
       }),
       typescript({
         tsconfig: path.resolve(packageDir, 'tsconfig.build.json'),
-        tsconfigOverride: { emitDeclarationOnly: true },
+        // tsconfigOverride: { emitDeclarationOnly: true },
         abortOnError: !isWatchMode,
       }),
     ],
@@ -64,12 +64,14 @@ function lib({ input, packageDir }: Options): RollupOptions {
         format: 'cjs',
         entryFileNames: '[name].js',
         chunkFileNames: '[name]-[hash].js',
+        exports: 'named',
       },
       {
         dir: `${packageDir}/dist`,
         format: 'esm',
         entryFileNames: '[name].mjs',
         chunkFileNames: '[name]-[hash].mjs',
+        exports: 'named',
       },
     ],
     plugins: [
