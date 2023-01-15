@@ -4,17 +4,14 @@ interface MenuProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HT
   value?: string;
 }
 
-// declare class Menu extends React.Component<MenuProps, any> {}
-
-const Menu = React.forwardRef<HTMLInputElement, MenuProps>((props, ref) => {
+export const Menu = React.forwardRef<HTMLInputElement, MenuProps>((props, ref) => {
   const { value, ...remainingProps } = props;
 
   return (
-    <menu ref={ref} {...remainingProps}>
+    <div ref={ref} {...remainingProps}>
       {value}
-    </menu>
+    </div>
   );
 });
 
 Menu.displayName = 'Menu';
-module.exports = Menu;
